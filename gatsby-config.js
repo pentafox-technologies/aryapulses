@@ -9,13 +9,14 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Arya Pulses - A Family-Run Business`,
+    description: `Arya Pulses was founded in 2016, a company solely dedicated to exporting pulses and lentils to Sri Lanka, from Australia.`,
+    author: `@shidiq-pentafox`,
+    siteUrl: `https://aryapulses.com.au/`,
   },
   plugins: [
     `gatsby-plugin-image`,
+    `gatsby-plugin-smoothscroll`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -28,15 +29,35 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `arya-pulses`,
+        short_name: `Arya Pulses`,
         start_url: `/`,
         background_color: `#663399`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/arya-pulses-notext-logo.svg`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /images/
+        }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Libre Baskerville: 400,700`,
+          `Inter: 200,300,400,500,600,700`,
+          `Montserrat: 100, 200, 300, 400, 500`,
+          `Baskervville: 400`
+        ],
+        display: "swap",
       },
     },
   ],
