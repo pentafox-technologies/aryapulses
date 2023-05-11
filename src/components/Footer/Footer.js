@@ -44,7 +44,7 @@ const Footer = () => {
     <footer className={clsx(classes.footer, 'panel')}>
       <Container className={classes.inner} size={1200}>
         <div className={classes.logo}>
-          <StaticImage placeholder='tracedSVG' src='../../images/arya-pulses-logo-white.png' alt='Arya Pulses Logo' />
+          <StaticImage placeholder='blurred' src='../../images/arya-pulses-logo-white.png' alt='Arya Pulses Logo' />
         </div>
         <div style={{marginTop: SPACING.MARGIN_XL * 2, display: 'flex', gap: SPACING.MARGIN_SM}}>
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">

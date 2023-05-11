@@ -8,6 +8,7 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  pathPrefix: "/aryapulses",
   siteMetadata: {
     title: `Arya Pulses - A Family-Run Business`,
     description: `Arya Pulses was founded in 2016, a company solely dedicated to exporting pulses and lentils to Sri Lanka, from Australia.`,

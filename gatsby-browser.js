@@ -1,4 +1,5 @@
 import './src/styles.css'
+import './src/styles/preloader.css'
 
 /**
  * Implement Gatsby's Browser APIs in this file.
