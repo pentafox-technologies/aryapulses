@@ -7,15 +7,21 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+
+require("dotenv").config({
+  path: `.env`
+})
+
 module.exports = {
   pathPrefix: "/aryapulses",
   siteMetadata: {
-    title: `Arya Pulses - A Family-Run Business`,
+    title: `Arya Pulses`,
     description: `Arya Pulses was founded in 2016, a company solely dedicated to exporting pulses and lentils to Sri Lanka, from Australia.`,
     author: `@shidiq-pentafox`,
     siteUrl: `https://aryapulses.com.au/`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
     `gatsby-plugin-smoothscroll`,
     {

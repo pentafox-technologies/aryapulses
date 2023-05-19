@@ -1,4 +1,4 @@
-import { ActionIcon, Container, clsx, createStyles, rem } from '@mantine/core'
+import { Anchor, Container, clsx, createStyles, rem } from '@mantine/core'
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react'
 import { COLORS, SPACING } from '../../constants/constants';
@@ -51,7 +51,13 @@ const Footer = () => {
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M18.364 4.636a9 9 0 0 1 .203 12.519l-.203 .21l-4.243 4.242a3 3 0 0 1 -4.097 .135l-.144 -.135l-4.244 -4.243a9 9 0 0 1 12.728 -12.728zm-6.364 3.364a3 3 0 1 0 0 6a3 3 0 0 0 0 -6z" stroke-width="0" fill="#FFF"></path>
           </svg>
-          <p style={{color: '#FFFFFF', fontSize: 16}}>8 Celia Road NorthKellyville NSW 2155, Australia.</p>
+          <Anchor
+            style={{color: '#FFF', fontSize: 16, fontFamily: "Montserrat, sans-serif"}}
+            href="https://www.google.com/maps/search/?api=1&query=8+Celia+Road+North+Kellyville+NSW+2155+Australia"
+            target='_blank'
+          >
+            8 Celia Road NorthKellyville NSW 2155, Australia.
+          </Anchor>
         </div>
         <div style={{marginTop: SPACING.MARGIN_LG, display: 'flex', gap: SPACING.MARGIN_SM}}>
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#FFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -59,7 +65,12 @@ const Footer = () => {
             <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
             <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
           </svg>
-          <p style={{color: '#FFFFFF', fontSize: 16}} size="xs" color="white">+61 420 828 321</p>
+          <Anchor
+            href={`tel:+61 420 828 321`}
+            style={{color: '#FFF', fontSize: 16, fontFamily: "Montserrat, sans-serif"}}
+          >
+            +61 420 828 321
+          </Anchor>
         </div>
         <div style={{marginTop: SPACING.MARGIN_LG, display: 'flex', gap: SPACING.MARGIN_SM}}>
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -67,10 +78,16 @@ const Footer = () => {
             <path d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z" stroke-width="0" fill="#FFF"></path>
             <path d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z" stroke-width="0" fill="#FFF"></path>
           </svg>
-          <p style={{color: '#FFFFFF', fontSize: 16}} >info@aryapulses.com.au</p>
+          <Anchor
+            href={`mailto:info@aryapulses.com.au`}
+            style={{color: '#FFF', fontSize: 16, fontFamily: "Montserrat, sans-serif"}}
+          >
+            info@aryapulses.com.au
+          </Anchor>
         </div>
 
-        <div style={{display: 'flex', marginTop: SPACING.MARGIN_LG, gap: SPACING.MARGIN_SM}}>
+        {/* Social links */}
+        {/* <div style={{display: 'flex', marginTop: SPACING.MARGIN_LG, gap: SPACING.MARGIN_SM}}>
           <ActionIcon className={classes.actionButton}>
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-meta" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#FFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -96,7 +113,7 @@ const Footer = () => {
               <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
             </svg>
           </ActionIcon>
-        </div>
+        </div> */}
       </Container>
       <div style={{ height: 67, backgroundColor: '#2D301F', color: '#FFFFFF', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <p style={{ fontSize: 14 }}>© All Rights Reserved 2023 | Aryapulses.com.au</p>

@@ -1,13 +1,12 @@
-import { Container, clsx } from "@mantine/core"
+import { Container } from "@mantine/core"
 import React, { useEffect, useRef } from "react"
-import { landingStyles } from "../../styles/landingStyles.css"
+import { Hero, HeroContainer, HeroImageContainer, HeroImageContainerMobile, HeroTextContainer, HeroTitle, LandingDescription } from "../../styles/landingStyles.css"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { StaticImage } from "gatsby-plugin-image"
 import { IndexContent } from "../../staticContent"
 
 const Landing = () => {
-  const { classes } = landingStyles()
   const heroImageRef = useRef()
   const heroImageRefRev = useRef()
   const heroImageRefInit = useRef()
@@ -64,25 +63,26 @@ const Landing = () => {
 
   }, [])
   return (
-    <div className={clsx(classes.hero)} id="home">
-      <Container
-        size={1200}
-        sx={{
+    <Hero id="home">
+      <div
+        style={{
           overflow: "hidden",
+          maxWidth: '75rem',
+          padding: '0px 1rem'
         }}
       >
-        <div className={classes.heroContainer}>
-          <div className={classes.heroTextContainer} style={{ flex: 1 }}>
-            <h1 className={classes.heroTitle} id="title-text" ref={titleTextRef}>
+        <HeroContainer>
+          <HeroTextContainer style={{ flex: 1 }}>
+            <HeroTitle id="title-text" ref={titleTextRef}>
               <span>Best </span> <span> Quality</span>
               <br />
               <span>Products</span>
-            </h1>
-            <p className={classes.landingDescription} ref={landingDescriptionRef}>
+            </HeroTitle>
+            <LandingDescription ref={landingDescriptionRef}>
               {IndexContent.landingDescription}
-            </p>
-          </div>
-          <div className={classes.heroImageContainer} ref={heroImageRefInit}>
+            </LandingDescription>
+          </HeroTextContainer>
+          <HeroImageContainer ref={heroImageRefInit}>
             <div ref={heroImageRef}>
               <StaticImage
                 src="../../images/indexImage-bg.png"
@@ -99,17 +99,17 @@ const Landing = () => {
                 objectFit="contain"
               />
             </div>
-          </div>
-          <div className={classes.heroImageContainer_mobile}>
+          </HeroImageContainer>
+          <HeroImageContainerMobile>
             <StaticImage
               src="../../images/landingImage-half.png"
               alt="Arya Pulses Australia"
               placeholder="blurred"
             />
-          </div>
-        </div>
-      </Container>
-    </div>
+          </HeroImageContainerMobile>
+        </HeroContainer>
+      </div>
+    </Hero>
   )
 }
 

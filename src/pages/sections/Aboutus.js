@@ -24,7 +24,7 @@ const Aboutus = () => {
     })
 
     gsap.to('#clients-count', {
-      innerText: 44,
+      innerText: 40,
       duration: 3,
       snap: {
         innerText: 1
@@ -36,7 +36,7 @@ const Aboutus = () => {
     })
     
     gsap.to('#country-count', {
-      innerText: 20,
+      innerText: 10,
       duration: 3,
       snap: {
         innerText: 1

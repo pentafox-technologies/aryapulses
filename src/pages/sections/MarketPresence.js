@@ -85,7 +85,7 @@ const MarketPresence = () => {
                 borderRight: `1px solid ${COLORS.PRIMARY()}`,
                 padding: `0px ${SPACING.MARGIN_LG}px`,
                 marginBottom: 10,
-                ...(index === country.length - 1
+                ...(index === country.length - 2
                   ? { borderRight: "none" }
                   : {}),
                 }}

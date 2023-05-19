@@ -56,7 +56,7 @@ const WhatWeDo = () => {
   useEffect(() => {
     gsap.registerPlugin(MotionPathPlugin, ScrollTrigger)
     gsap.to('#story-point', {
-      duration: 1,
+      duration: 5,
       motionPath: {
         path: '#story-path',
         align: '#story-path',

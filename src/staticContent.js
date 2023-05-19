@@ -159,7 +159,6 @@ export const plantProteinData = [
 export const country = [
     'Australia',
     'China',
-    'Europe',
     'Singapore',
     'Malaysia',
     'Dubai',
