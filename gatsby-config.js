@@ -13,9 +13,10 @@ require("dotenv").config({
 })
 
 module.exports = {
-  pathPrefix: "/aryapulses",
+  pathPrefix: "",
   siteMetadata: {
     title: `Arya Pulses`,
+    titleDesc: `Premium Australian Pulses & Lentils for Global Palates`,
     description: `Arya Pulses was founded in 2016, a company solely dedicated to exporting pulses and lentils to Sri Lanka, from Australia.`,
     author: `@shidiq-pentafox`,
     siteUrl: `https://aryapulses.com.au/`,
@@ -24,6 +25,13 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
     `gatsby-plugin-smoothscroll`,
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: process.env.GATSBY_G_TRACKING_ID,
+        includeInDevelopment: false,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -36,15 +44,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `arya-pulses`,
+        name: `Arya Pulses`,
         short_name: `Arya Pulses`,
         start_url: `/`,
-        background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
+        background_color: `#EEEED7`,
+        theme_color: `#525B37`,
         display: `minimal-ui`,
-        icon: `src/images/arya-pulses-notext-logo.svg`, // This path is relative to the root of the site.
+        icon: `src/images/arya-pulses-icon.png`, // This path is relative to the root of the site.
       },
     },
     {

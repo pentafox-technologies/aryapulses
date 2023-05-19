@@ -27,11 +27,11 @@ import { submitEnquiry } from "../services/Enquiry"
 
 const useStyles = createStyles(theme => ({
   logo: {
-    width: 180,
+    width: 170,
     height: 90,
 
     [theme.fn.smallerThan(BREAKPOINT.md)]: {
-      width: 100,
+      width: 130,
       height: 50,
     },
   },

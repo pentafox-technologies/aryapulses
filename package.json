@@ -15,6 +15,7 @@
     "embla-carousel-react": "^7.1.0",
     "gatsby": "^5.9.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-google-tagmanager": "^5.10.0",
     "gatsby-plugin-image": "^3.9.0",
     "gatsby-plugin-manifest": "^5.9.0",
     "gatsby-plugin-mantine": "^5.0.0",
