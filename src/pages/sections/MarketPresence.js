@@ -39,9 +39,11 @@ const useStyle = createStyles(theme => ({
     }
   },
   map: {
-    minHeight: '100vh',
+    minHeight: '90vh',
     [theme.fn.smallerThan(BREAKPOINT.sm)]: {
-      minHeight: '80vh',
+      minHeight: '0vh',
+      height: '100%',
+      marginTop: 40
     }
   }
 }))
@@ -61,26 +63,29 @@ const MarketPresence = () => {
             flexDirection: "column",
           }}
         >
-          {/* <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              textAlign: "center",
-              position: 'absolute',
-            }}
-          >
-            <h1 className={classes.pageTitle}>
-              Arya Pulses exports containerised and bulk grain across key
-              international markets.
-            </h1>
-          </div> */}
           <div
             className={classes.mapWrapper}
             style={{
               position: 'relative',
             }}
           >
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+                position: 'relative',
+                marginTop: 60,
+                zIndex: 2,
+                width: '100%',
+              }}
+            >
+              <h1 className={classes.pageTitle}>
+                Arya Pulses exports containerised and bulk grain across key international
+                markets.
+              </h1>
+            </div>
             <div
               style={{
                 position: 'absolute',
@@ -92,23 +97,6 @@ const MarketPresence = () => {
                 zIndex: 1,
               }}
             ></div>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                textAlign: 'center',
-                position: 'absolute',
-                top: 60,
-                zIndex: 2,
-                width: '100%',
-              }}
-            >
-              <h1 className={classes.pageTitle}>
-                Arya Pulses exports containerised and bulk grain across key international
-                markets.
-              </h1>
-            </div>
             <MarketMap width="100%"
               className={classes.map}
             />
