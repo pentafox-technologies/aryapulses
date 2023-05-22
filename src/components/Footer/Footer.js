@@ -121,7 +121,7 @@ const Footer = () => {
         </div> */}
       </Container>
       <div style={{ height: 67, backgroundColor: '#2D301F', color: '#FFFFFF', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <p style={{ fontSize: 14 }}>© All Rights Reserved 2023 | Aryapulses</p>
+        <p style={{ fontSize: 14 }}>© All Rights Reserved 2023 | Arya Pulses Australia (Pty) Ltd</p>
       </div>
     </footer>
   )

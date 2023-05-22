@@ -143,25 +143,7 @@ function Seo({ description, title, children }) {
         rel="apple-touch-icon"
         sizes="167x167"
       />
-      <link
-        href="/icons/apple-touch-icon-180x180.png"
-        rel="icon"
-        sizes="180x180"
-        type="image/png"
-      />
-
-      <link
-        href="/icons/favicon-32x32.png"
-        rel="icon"
-        sizes="32x32"
-        type="image/png"
-      />
-      <link
-        href="/icons/favicon-16x16.png"
-        rel="icon"
-        sizes="16x16"
-        type="image/png"
-      />
+      <link rel="icon" type="image/png" href={`${site.siteMetadata.siteUrl}/arya-pulses-icon.png`} sizes="any" />
 
       {children}
     </>
