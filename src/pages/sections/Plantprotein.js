@@ -38,7 +38,7 @@ const Plantprotein = () => {
           alignItems: "center",
         }}
       >
-        <div style={{ textAlign: "center", maxWidth: BREAKPOINT.xs }}>
+        <div style={{ textAlign: "center"}}>
           <h1 className={classes.pageTitle}>{title}</h1>
           <p className={classes.pageDescription}>
             {description}
@@ -87,7 +87,7 @@ const Plantprotein = () => {
               className={classes.plantproteinCarousel}
               initialSlide={0}
               mx="auto"
-              maw={BREAKPOINT.xs}
+              maw={BREAKPOINT.sm}
               controlSize={40}
             >
               {
@@ -96,13 +96,13 @@ const Plantprotein = () => {
                 ))
               }
             </Carousel>
-            <div className={clsx(classes.img5, 'image5')} style={{width: 200, objectFit: 'contain', position: 'absolute', bottom: 30}}>
+            {/* <div className={clsx(classes.img5, 'image5')} style={{width: 200, objectFit: 'contain', position: 'absolute', bottom: 30}}>
               <StaticImage 
                 src="../../images/bg3.png"
                 placeholder="blurred"
                 quality={100}
               />
-            </div>
+            </div> */}
           </div>
           <div style={{ flex: 1, position: 'relative'}} className={classes.imgContainer2}>
             <div style={{width: 200, objectFit: 'contain', position: 'absolute', right: 0}} className="image6">

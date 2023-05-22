@@ -10,6 +10,11 @@ body {
   line-height: 1.45;
   color: #424242;
   background-color: #FEFEFE;
+  scroll-behavior: smooth;
+}
+
+button, textarea, input {
+  font-family: "Montserrat", sans-serif !important;
 }
 
 h1,

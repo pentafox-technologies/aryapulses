@@ -7,9 +7,14 @@
 /**
  * @type {import('gatsby').GatsbySSR['onRenderBody']}
  */
-const React = require("react")
+// const React = require("react")
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import { createStylesServer, ServerStyles } from '@mantine/ssr';
 
-exports.onRenderBody = ({ setHtmlAttributes, setPreBodyComponents, setBodyAttributes, setHeadComponents, setPostBodyComponents }) => {
+const stylesServer = createStylesServer();
+
+export const onRenderBody = ({ setHtmlAttributes, setPreBodyComponents, setBodyAttributes, setHeadComponents, setPostBodyComponents }) => {
   setHtmlAttributes({ lang: `en` })
   setPreBodyComponents([
     <div id='preloader'>
@@ -31,3 +36,9 @@ exports.onRenderBody = ({ setHtmlAttributes, setPreBodyComponents, setBodyAttrib
     <script src="/scripts/preloader.js" />
   ])
 }
+
+export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString, setHeadComponents }) => {
+  const html = renderToString(bodyComponent);
+  setHeadComponents([<ServerStyles html={html} server={stylesServer} />]);
+  replaceBodyHTMLString(html);
+};

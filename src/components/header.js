@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import {
   Alert,
@@ -24,6 +24,7 @@ import scrollTo from "gatsby-plugin-smoothscroll"
 import { useForm } from "@mantine/form"
 import styled from "styled-components"
 import { submitEnquiry } from "../services/Enquiry"
+import HCaptcha from "@hcaptcha/react-hcaptcha"
 
 const useStyles = createStyles(theme => ({
   logo: {
@@ -160,21 +161,33 @@ const Head = ({ siteTitle, headerStyle, showLinks = true }) => {
   const [enquiryOpened, { open, close }] = useDisclosure(false)
   const [visible, overlay] = useDisclosure(false)
   const [errorAlert, alertOptions] = useDisclosure(false)
+  const [captchaToken, setCaptchaToken] = useState()
+  const [alertMessage, setAlertMessage] = useState()
   const { classes } = useStyles()
 
   const handleSubmit = body => {
-    overlay.open()
-    submitEnquiry(body)
-      .then(() => {
-        overlay.close()
-        form.reset()
-        close()
-      })
-      .catch(err => {
-        overlay.close()
-        console.error(err)
-        alertOptions.open()
-      })
+    if(captchaToken) {
+      alertOptions.close()
+      overlay.open()
+      const bodyValues = {
+        ...body,
+        captchaToken
+      }
+      submitEnquiry(bodyValues)
+        .then(() => {
+          overlay.close()
+          form.reset()
+          close()
+        })
+        .catch(err => {
+          overlay.close()
+          console.error(err)
+          alertOptions.open()
+        })
+    } else {
+      setAlertMessage("Please check captcha to submit your request.")
+      alertOptions.open()
+    }
   }
 
   const form = useForm({
@@ -231,6 +244,7 @@ const Head = ({ siteTitle, headerStyle, showLinks = true }) => {
                   radius="xs"
                   size="md"
                   ml={SPACING.MARGIN_MD}
+                  style={{ backgroundColor: COLORS.PRIMARY() }}
                 >
                   Enquiry
                 </EnquiryBtn>
@@ -298,7 +312,10 @@ const Head = ({ siteTitle, headerStyle, showLinks = true }) => {
               top: SPACING.MARGIN_LG,
               right: SPACING.MARGIN_LG,
             }}
-            onClick={close}
+            onClick={() => {
+              close()
+              form.reset()
+            }}
           />
           <h1 style={{ ...FONTS.TITLE, fontSize: 32 }}>
             Have a query?
@@ -342,9 +359,12 @@ const Head = ({ siteTitle, headerStyle, showLinks = true }) => {
               title="Oops!"
               color="red"
             >
-              Something went wrong while submitting your inquiry. Please try
-              again later or contact us directly through whatsapp. We apologize
-              for the inconvenience.
+              {
+                alertMessage ? alertMessage :
+                `Something went wrong while submitting your inquiry. Please try
+                again later or contact us directly through whatsapp. We apologize
+                for the inconvenience.`
+              }
             </Alert>
           )}
           <form
@@ -387,10 +407,15 @@ const Head = ({ siteTitle, headerStyle, showLinks = true }) => {
             <div
               style={{
                 display: "flex",
-                justifyContent: "flex-end",
+                justifyContent: "space-between",
                 gap: SPACING.MARGIN_SM,
               }}
             >
+              <HCaptcha
+                sitekey={process.env.GATSBY_CAPTCHA_TOKEN}
+                onVerify={(token) => setCaptchaToken(token)}
+                onExpire={() => setCaptchaToken()}
+              />
               <Button
                 type="submit"
                 style={{ backgroundColor: COLORS.PRIMARY() }}

@@ -138,7 +138,7 @@ export const plantProteinData = [
         is that they are lacking in protein. Not only is this
         completely untrue, but plant-based proteins provide some
         amazing health benefits. Proteins are made up of amino acids
-        and there are 20 of them in total.The human body is able to
+        and there are 20 of them in total. The human body is able to
         synthesize or create 11 of them – the remaining 9 are known as
         “essential amino acids” because they must come from your diet.`
     },
