@@ -394,6 +394,7 @@ const Head = ({ siteTitle, headerStyle, showLinks = true }) => {
               radius="xs"
               size="md"
               placeholder="Mobile No"
+              type="number"
               className={classes.textInput}
               {...form.getInputProps("mobile")}
             />
