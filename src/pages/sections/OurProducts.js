@@ -5,6 +5,7 @@ import { BREAKPOINT } from "../../constants/breakpoints"
 import { OurProductsData } from "../../staticContent"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { gsap } from "gsap"
+import { StaticImage } from "gatsby-plugin-image"
 
 const useStyles = createStyles(theme => ({
   root: {

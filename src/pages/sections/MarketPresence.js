@@ -4,6 +4,7 @@ import MarketMap from "../../images/map.svg"
 import { COLORS, FONTS, SPACING } from "../../constants/constants"
 import { BREAKPOINT } from "../../constants/breakpoints"
 import { country } from "../../staticContent"
+import { StaticImage } from "gatsby-plugin-image"
 
 const useStyle = createStyles(theme => ({
   //common styles
@@ -126,6 +127,11 @@ const MarketPresence = () => {
               </p>
             ))}
           </div>
+        </div>
+        <div style={{display: 'flex', justifyContent: 'center', marginTop: 90, flexWrap: 'wrap', gap: 60}}>
+          <StaticImage placeholder='blurred' src='../../images/gpc.png' style={{ width: 180, height: '100%' }} />
+          <StaticImage placeholder='blurred' src='../../images/gta.jpg' style={{ width: 300 }} />
+          <StaticImage placeholder='blurred' src='../../images/gafta.gif' style={{ width: 120, height: '100%' }} />
         </div>
       {/* </Container> */}
     </div>
